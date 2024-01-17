@@ -1,37 +1,46 @@
 const questions = [{
-        question: "Which is the largest animal in the world? ",
+        question: "What do you call a portable computer?",
         answers: [
-            { text: "Shark", corrent: false },
-            { text: "Blue Whale", corrent: true },
-            { text: "Elephant", corrent: false },
-            { text: "Giraffe", corrent: false },
+            { text: "Desktop", corrent: false },
+            { text: "Laptop", corrent: true },
+            { text: "Tablet", corrent: false },
+            { text: "Server", corrent: false },
         ]
     },
     {
-        question: "My name is:  ",
+        question: "Which of the following is a programming language used for creating web pages?",
         answers: [
-            { text: "Shark", corrent: false },
-            { text: "Suely ", corrent: true },
-            { text: "Elephant", corrent: false },
-            { text: "Giraffe", corrent: false },
+            { text: "HTML", corrent: true },
+            { text: "Java", corrent: false },
+            { text: "Python", corrent: false },
+            { text: "C++", corrent: false },
         ]
     },
     {
-        question: "Surname is:  ",
+        question: "What does CPU stand for?",
         answers: [
-            { text: "Shark", corrent: false },
-            { text: "Buque", corrent: true },
-            { text: "Elephant", corrent: false },
-            { text: "Giraffe", corrent: false },
+            { text: "Central Processing Unit", corrent: true },
+            { text: "Computer Personal Unit", corrent: false },
+            { text: "Central Process Unit", corrent: false },
+            { text: "Central Processor Unit", corrent: false },
         ]
     },
     {
-        question: " Age?   ",
+        question: "Who is known as the co-founder of Microsoft?",
         answers: [
-            { text: "Shark", corrent: false },
-            { text: "18 years ", corrent: true },
-            { text: "Elephant", corrent: false },
-            { text: "Giraffe", corrent: false },
+            { text: "Steve Jobs", corrent: false },
+            { text: "Bill Gates", corrent: true },
+            { text: "Mark Zuckerberg", corrent: false },
+            { text: "Elon Musk", corrent: false },
+        ]
+    },
+    {
+        question: "Who created the well-known app 'Pinterest'?",
+        answers: [
+            { text: "Mark Zuckerberg", corrent: false },
+            { text: "Evan Spiegel", corrent: false },
+            { text: "Ben Silbermann", corrent: true },
+            { text: "Jack Dorsey", corrent: false },
         ]
     }
 ];
@@ -54,8 +63,7 @@ function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.
-    question;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -96,10 +104,24 @@ function selectAnswer(e) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length }!`;
+    let message = '';
+    let emoji = '';
+    if (score >= 4) {
+        message = "Congratulations! 🎉You're awesome!";
+        emoji = '👏';
+    } else if (score === 3) {
+        message = "You almost got there!🌟";
+        emoji = '😊';
+    } else {
+        message = "Oops! Looks like you need more practice. ";
+        emoji = '🤔';
+    }
+
+    questionElement.innerHTML = `${message} ${emoji} You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again.";
     nextButton.style.display = "block";
 }
+
 
 function handleNextButton() {
     currentQuestionIndex++;
