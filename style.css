@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: -0;
+    font-family: system-ui, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: linear-gradient( to bottom, #f1f4f9, #dff1ff);
+}
+
+
+/* Background*/
+
+.color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+.color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #001e4d;
+}
+
+.color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #3c72c9;
+}
+
+.color:nth-child(3) {
+    bottom: 50px;
+    left: 100px;
+    width: 400px;
+    height: 400px;
+    background: #125dd4;
+}
+
+.color:nth-child(4) {
+    bottom: -90px;
+    right: 100px;
+    width: 700px;
+    height: 700px;
+    background: #7287aa;
+}
+
+.app {
+    background: #ffffff48;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    position: absolute;
+}
+
+.app h1 {
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz #question {
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+}
+
+.btn {
+    background: #ffffff71;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover:not([disabled]) {
+    background: #222;
+    color: #fff;
+}
+
+section .btn:disabled {
+    cursor: no-drop;
+}
+
+#next-btn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none
+}
+
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect {
+    background: #ff9393;
+}
